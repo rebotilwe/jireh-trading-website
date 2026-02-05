@@ -1,0 +1,11 @@
+:root {
+  --leaf-green: #2f8f3c;       /* tweak to match logo */
+  --olive-green: #657a3a;
+  --yellow-gold: #f5c644;
+  --orange-peach: #f29b59;
+  --nav-bg: #071b10;           /* deep green/near-black */
+  --nav-text: #fdfdfb;
+  --nav-muted: rgba(255, 255, 255, 0.7);
+  --radius-full: 999px;
+  --shadow-soft: 0 16px 40px rgba(0, 0, 0, 0.35);
+}

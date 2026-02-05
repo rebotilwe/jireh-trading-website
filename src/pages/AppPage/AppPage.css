@@ -1,0 +1,138 @@
+.app-page {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #2d3a2d;
+  min-height: 100vh;
+}
+
+/* Hero / Showcase */
+.app-hero {
+  background: linear-gradient(135deg, var(--off-white) 0%, #f4f7f5 100%);
+  padding: 6rem 1.5rem 4rem;
+}
+
+.app-hero .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.app-hero-content {
+  flex: 1;
+  min-width: 280px;
+}
+
+.app-hero-content h1 {
+  font-size: clamp(2.5rem, 5vw, 3rem);
+  font-weight: 800;
+  color: var(--leaf-green);
+  margin-bottom: 1rem;
+}
+
+.app-hero-content p {
+  font-size: 1.2rem;
+  color: #5a6a5a;
+  margin-bottom: 2rem;
+  max-width: 500px;
+}
+
+.app-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn.download {
+  padding: 1rem 2rem;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  text-decoration: none;
+  color: #fff;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn.download.ios {
+  background: linear-gradient(135deg, #5ac8fa, #007aff);
+}
+
+.btn.download.android {
+  background: linear-gradient(135deg, #a4c639, #7cb342);
+}
+
+.btn.download:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.25);
+}
+
+.app-hero-image {
+  flex: 1;
+  min-width: 280px;
+  text-align: center;
+}
+
+.app-hero-image img {
+  max-width: 100%;
+  border-radius: var(--radius-soft);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+/* Features Section */
+.app-features {
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+
+.app-features h2 {
+  font-size: 2rem;
+  color: var(--leaf-green);
+  margin-bottom: 3rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(15px);
+  border-radius: var(--radius-soft);
+  padding: 2rem 1.5rem;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card h3 {
+  color: var(--leaf-green);
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.feature-card p {
+  color: #4b5a4b;
+  font-size: 0.95rem;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .app-hero .container {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .app-hero-content p {
+    margin: 0 auto 2rem;
+  }
+}
