@@ -1,109 +1,174 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./About.css";
 
 const About = () => {
   return (
     <main className="about-page">
-      {/* Hero */}
+      {/* Hero Section */}
       <section className="about-hero">
-        <div className="hero-bg"></div>
+        <div className="hero-gradient"></div>
         <div className="container">
-          <div className="hero-badge">Since 2019</div>
-          <h1 className="hero-title">
-            Connecting <span>Land to Market</span>
-          </h1>
-          <p className="hero-subtitle">
-            Delivering fresh produce efficiently while honoring traditional 
-            values and modern innovation across South Africa.
-          </p>
+          <div className="hero-content">
+            <div className="hero-badge">Since 2019</div>
+            <h1 className="hero-title">
+              Connecting <span className="hero-accent">Farmers to Markets</span>
+            </h1>
+            <p className="hero-subtitle">
+              Jireh Trading Group specializes in seasonal agricultural produce 
+              and shared transport services across South Africa.
+            </p>
+            <div className="hero-cta">
+              <Link to="/collaborate" className="btn primary">
+                Collaborate With Us
+              </Link>
+              <Link to="/contact" className="btn secondary">
+                Contact Us
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Core Details */}
-      <section className="about-details">
+      {/* Mission & Vision */}
+      <section className="mission-section">
         <div className="container">
-          <div className="details-grid">
-            <div className="about-text">
-              <h2 className="section-title">Our Mission</h2>
+          <div className="mission-grid">
+            <div className="mission-card">
+              <div className="mission-icon">🎯</div>
+              <h2>Our Mission</h2>
               <p>
-                Seamless connections between producers and markets with 
-                sustainable transport optimization that respects the land.
-              </p>
-              
-              <h2 className="section-title">Our Vision</h2>
-              <p>
-                Become South Africa's leading fresh produce logistics network, 
-                empowering farmers and traders with cutting-edge technology.
+                Bridge the gap between farmers and markets through 
+                reliable transport solutions and fair trade practices, 
+                ensuring fresh produce reaches consumers efficiently.
               </p>
             </div>
             
-            <div className="about-visual">
-              <div className="image-container">
-                <img 
-                  src="https://images.unsplash.com/photo-1506806732259-39c2d0268443?auto=format&fit=crop&w=600&q=80" 
-                  alt="Farmers working in fields"
-                />
-                <div className="image-overlay">
-                  <span>500+ Loads Delivered</span>
+            <div className="mission-card">
+              <div className="mission-icon">👁️</div>
+              <h2>Our Vision</h2>
+              <p>
+                To become South Africa's leading agricultural logistics 
+                network, empowering rural economies through technology 
+                and sustainable partnerships.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Story Section */}
+      <section className="story-section">
+        <div className="container">
+          <div className="story-content">
+            <div className="story-text">
+              <h2>Our Story</h2>
+              <p>
+                Founded in 2019 in Pongola, Jireh Trading Group started with 
+                a simple mission: connect local mango farmers to Durban markets 
+                with reliable transportation.
+              </p>
+              <p>
+                Today, we've grown into a comprehensive agricultural logistics 
+                company serving four provinces, moving over 500 loads monthly, 
+                and connecting hundreds of farmers with national markets.
+              </p>
+              <div className="story-stats">
+                <div className="story-stat">
+                  <span className="stat-number">500+</span>
+                  <span className="stat-label">Farmers Connected</span>
+                </div>
+                <div className="story-stat">
+                  <span className="stat-number">4</span>
+                  <span className="stat-label">Provinces Served</span>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Journey Timeline */}
-      <section className="journey-timeline">
-        <div className="container">
-          <h2 className="section-title center">Our Journey</h2>
-          <div className="timeline">
-            <div className="timeline-item">
-              <div className="timeline-marker gold"></div>
-              <div className="timeline-content">
-                <h3>2019</h3>
-                <p>Founded in Pongola, connecting local farmers to Durban markets</p>
-              </div>
-            </div>
-            <div className="timeline-item">
-              <div className="timeline-marker green"></div>
-              <div className="timeline-content">
-                <h3>2021</h3>
-                <p>Expanded to shared load transport across KZN & Eastern Cape</p>
-              </div>
-            </div>
-            <div className="timeline-item">
-              <div className="timeline-marker peach"></div>
-              <div className="timeline-content">
-                <h3>2024</h3>
-                <p>Mobile app launched. 500+ loads moved monthly</p>
-              </div>
-            </div>
-            <div className="timeline-item active">
-              <div className="timeline-marker gold"></div>
-              <div className="timeline-content">
-                <h3>2026</h3>
-                <p>National expansion with Limpopo & Mpumalanga routes</p>
-              </div>
+            <div className="story-image">
+              <img 
+                src="https://images.unsplash.com/photo-1506806732259-39c2d0268443?w=600&h=600&fit=crop&q=80" 
+                alt="Farmers working together"
+              />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="about-stats">
+      {/* Values Section */}
+      <section className="values-section">
         <div className="container">
-          <div className="stats-grid">
-            <div className="stat-card">
-              <div className="stat-number">500+</div>
-              <div className="stat-label">Loads Monthly</div>
+          <h2 className="section-title">Our Values</h2>
+          <div className="values-grid">
+            <div className="value-card">
+              <div className="value-icon">🤝</div>
+              <h3>Partnership</h3>
+              <p>Building long-term relationships with farmers, transporters, and buyers.</p>
             </div>
-            <div className="stat-card">
-              <div className="stat-number">4</div>
-              <div className="stat-label">Provinces Served</div>
+            
+            <div className="value-card">
+              <div className="value-icon">🚚</div>
+              <h3>Reliability</h3>
+              <p>Consistent, on-time delivery with temperature-controlled transport.</p>
             </div>
-            <div className="stat-card">
-              <div className="stat-number">98%</div>
-              <div className="stat-label">On-Time Delivery</div>
+            
+            <div className="value-card">
+              <div className="value-icon">🌱</div>
+              <h3>Sustainability</h3>
+              <p>Shared load transport to reduce costs and environmental impact.</p>
+            </div>
+            
+            <div className="value-card">
+              <div className="value-icon">💡</div>
+              <h3>Innovation</h3>
+              <p>Using technology to optimize routes and match loads efficiently.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Team/Leadership Preview */}
+      <section className="team-section">
+        <div className="container">
+          <h2 className="section-title">Our Approach</h2>
+          <div className="team-grid">
+            <div className="team-card">
+              <div className="team-avatar">🌾</div>
+              <h3>Farm-First Focus</h3>
+              <p>Working directly with farmers to understand their needs and seasonal challenges.</p>
+            </div>
+            
+            <div className="team-card">
+              <div className="team-avatar">📱</div>
+              <h3>Tech-Enabled</h3>
+              <p>Real-time tracking and digital paperwork for transparency and efficiency.</p>
+            </div>
+            
+            <div className="team-card">
+              <div className="team-avatar">🔄</div>
+              <h3>Shared Logistics</h3>
+              <p>Maximizing truck capacity and eliminating empty return trips.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="about-cta">
+        <div className="container">
+          <div className="cta-content">
+            <h2>Ready To Grow With Us?</h2>
+            <p>
+              Whether you're a farmer looking for reliable transport, 
+              a transporter seeking consistent loads, or a buyer wanting 
+              fresh produce, we're here to connect you.
+            </p>
+            <div className="cta-buttons">
+              <Link to="/collaborate" className="btn primary large">
+                Start Collaborating
+              </Link>
+              <Link to="/products" className="btn secondary">
+                View Our Produce
+              </Link>
             </div>
           </div>
         </div>
