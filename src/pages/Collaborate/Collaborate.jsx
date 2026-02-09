@@ -156,7 +156,7 @@ const Collaborate = () => {
       case 'error':
         return '✗ Try Again';
       default:
-        return 'Submit Collaboration Request';
+        return 'Submit ';
     }
   };
 

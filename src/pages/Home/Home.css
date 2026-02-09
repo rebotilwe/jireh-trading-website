@@ -758,3 +758,78 @@
     height: 80px;
   }
 }
+/* ================= FINAL BUTTON FIX ================= */
+
+/* Always control button containers */
+.hero-buttons,
+.cta-buttons {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 1rem !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  flex-wrap: wrap !important;
+  box-sizing: border-box;
+}
+
+/* Always control buttons */
+.hero-buttons .btn,
+.cta-buttons .btn {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  max-width: 280px !important;
+  margin: 0 !important;
+  text-align: center !important;
+}
+
+/* Phones: Stack vertically */
+@media (max-width: 768px) {
+  .hero-buttons,
+  .cta-buttons {
+    flex-direction: column !important;
+  }
+
+  .hero-buttons .btn,
+  .cta-buttons .btn {
+    max-width: 100% !important;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 360px) {
+  .hero-buttons .btn,
+  .cta-buttons .btn {
+    font-size: 0.85rem !important;
+    padding: 0.7rem 1rem !important;
+    min-height: 46px !important;
+  }
+}
+/* Force space AFTER CTA buttons */
+.cta-buttons {
+  margin-bottom: 3rem !important;
+}
+
+/* If you have app store / next section below */
+.app-stores {
+  margin-top: 2rem !important;
+}
+/* ================= FIX BIG BUTTONS ON SMALL PHONES ================= */
+
+/* Small phones (320px and similar) */
+@media (max-width: 360px) {
+
+  /* Target HERO buttons only */
+  .hero-cta .btn {
+    width: 100% !important;
+    max-width: 240px !important;   /* smaller than before */
+    padding: 0.6rem 1.2rem !important;
+    font-size: 0.85rem !important;
+    border-radius: 999px;
+  }
+
+  /* Reduce gap slightly */
+  .hero-cta {
+    gap: 0.8rem !important;
+  }
+}

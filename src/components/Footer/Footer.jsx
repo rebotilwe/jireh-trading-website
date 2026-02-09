@@ -94,19 +94,18 @@ const Footer = () => {
         {/* BOTTOM BAR */}
         <div className="footer-bottom">
           <div className="container">
-            <div className="bottom-content">
+           <div className="bottom-content">
 
-              <p>
-                © {currentYear} Jireh Trading Group. All rights reserved.
-              </p>
+  <p>
+    © {currentYear} Jireh Trading Group. All rights reserved.
+  </p>
 
-              {/* <div className="social-links">
-                <a href="#" aria-label="Facebook">📘</a>
-                <a href="#" aria-label="WhatsApp">💬</a>
-                <a href="#" aria-label="LinkedIn">💼</a>
-              </div> */}
+  <p className="developer-credit">
+    Developed by <span>Afribiz Connect</span>
+  </p>
 
-            </div>
+</div>
+
           </div>
         </div>
       </footer>

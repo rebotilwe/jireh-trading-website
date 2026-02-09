@@ -697,3 +697,116 @@
     transform: none;
   }
 }
+/* Ultra Small Devices - 320px (mobile S) */
+@media (max-width: 360px) {
+  /* Hero Section */
+  .app-hero {
+    padding: 40px 3%;
+  }
+
+  .hero-title {
+    font-size: 1.6rem;
+    line-height: 1.3;
+  }
+
+  .hero-badge {
+    font-size: 0.75rem;
+    padding: 0.35rem 1.25rem;
+  }
+
+  .app-hero-content p {
+    font-size: 0.9rem;
+    max-width: 100%;
+  }
+
+  .app-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+    padding: 10px 15px;
+  }
+
+  /* Phone Mockup */
+  .phone-mockup {
+    width: 220px;
+    height: 480px;
+    padding: 16px 12px;
+  }
+
+  /* Quick Actions inside phone */
+  .quick-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .quick-actions button {
+    font-size: 0.8rem;
+    padding: 0.5rem;
+  }
+
+  /* Features Section */
+  .features-grid,
+  .status-content,
+  .faq-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .feature-card,
+  .status-item,
+  .faq-item {
+    padding: 20px 15px;
+  }
+
+  .app-features h2,
+  .app-preview-text h2,
+  .development-status h2,
+  .app-faq h2,
+  .final-cta h2 {
+    font-size: 1.6rem;
+  }
+
+  .feature-card h3,
+  .status-item h3,
+  .faq-question {
+    font-size: 1rem;
+  }
+
+  .feature-card p,
+  .status-item p,
+  .faq-answer {
+    font-size: 0.85rem;
+  }
+
+  /* Final CTA */
+  .cta-form {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .cta-email-input,
+  .cta-submit-btn {
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 10px 15px;
+  }
+}
+/* Fix iOS and Android buttons overlapping on small screens */
+@media (max-width: 480px) {
+  .app-buttons {
+    flex-direction: column; /* Stack vertically */
+    gap: 10px; /* Small space between buttons */
+    align-items: center; /* Center them */
+  }
+
+  .app-buttons .btn {
+    width: 100%; /* Take full width of container */
+    max-width: 280px; /* Optional: prevent them from being too wide */
+    justify-content: center; /* Center the text/icons inside the button */
+    padding: 10px 0; /* Adjust padding for smaller screens */
+    font-size: 0.9rem; /* Slightly smaller font for fit */
+  }
+}

@@ -341,3 +341,14 @@
   outline: 3px solid var(--yellow-gold);
   outline-offset: 3px;
 }
+/* Developer Credit */
+.developer-credit {
+  font-size: 0.85rem;
+  opacity: 0.85;
+  letter-spacing: 0.05em;
+}
+
+.developer-credit span {
+  color: var(--yellow-gold);
+  font-weight: 600;
+}

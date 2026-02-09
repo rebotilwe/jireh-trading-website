@@ -342,25 +342,46 @@ const Products = () => {
       </section>
 
       {/* Transport CTA */}
-      <section className="transport-cta">
-        <div className="container">
-          <div className="transport-content">
-            <h2>Need Transport for Your Produce?</h2>
-            <p>
-              Our shared load transport service connects farms to markets 
-              across South Africa with temperature-controlled vehicles.
-            </p>
-            <div className="transport-buttons">
-              <Link to="/transport" className="btn primary">
-                View Transport Routes
-              </Link>
-              <Link to="/contact" className="btn secondary">
-                Get a Quote
-              </Link>
-            </div>
-          </div>
+  {/* Transport CTA - Redesigned */}
+<section className="transport-section">
+  <div className="container">
+    <div className="transport-card">
+      <div className="transport-icon">
+        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+          <path d="M16 3H1V16H16V3Z" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M16 8H20L23 11V16H16V8Z" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M5.5 21C7.15685 21 8.5 19.6569 8.5 18C8.5 16.3431 7.15685 15 5.5 15C3.84315 15 2.5 16.3431 2.5 18C2.5 19.6569 3.84315 21 5.5 21Z" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M18.5 21C20.1569 21 21.5 19.6569 21.5 18C21.5 16.3431 20.1569 15 18.5 15C16.8431 15 15.5 16.3431 15.5 18C15.5 19.6569 16.8431 21 18.5 21Z" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      </div>
+      
+      <div className="transport-content">
+        <h2>Need Transport for Your Produce?</h2>
+        <div className="transport-text">
+          <p>Our shared-load transport service connects farms to markets across South Africa.</p>
+          <p>All produce is transported in temperature-controlled vehicles, ensuring freshness and quality from farm to destination.</p>
         </div>
-      </section>
+        
+        <div className="transport-actions">
+          <Link to="/transport" className="transport-btn primary-btn">
+            <span>View Transport Routes</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </Link>
+          <Link to="/contact" className="transport-btn secondary-btn">
+            <span>Get a Quote</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path d="M21 11.5C21 16.7467 16.7467 21 11.5 21C6.25329 21 2 16.7467 2 11.5C2 6.25329 6.25329 2 11.5 2C16.7467 2 21 6.25329 21 11.5Z" stroke="currentColor" strokeWidth="1.5"/>
+              <path d="M11.5 15.5V11.5M11.5 7.5V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+            </svg>
+          </Link>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* Seasonal Guide */}
       <section className="seasonal-guide">
