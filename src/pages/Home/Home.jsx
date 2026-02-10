@@ -1,183 +1,221 @@
 import "./Home.css";
 import { Link } from "react-router-dom";
 
-// Import local images
-import mangoImg from "../../assets/images/mango.png";
-import orangeImg from "../../assets/images/oranges.png";
-import chilliImg from "../../assets/images/chillies.png";
-
 const Home = () => {
   return (
     <main className="home">
-      {/* ================= MODERN HERO ================= */}
+
+      {/* ================= HERO ================= */}
       <section className="hero">
         <div className="hero-background"></div>
         <div className="hero-particles"></div>
-        
+
         <div className="hero-content">
           <div className="hero-badge">Since 2019</div>
-          
+
           <h1 className="hero-title">
-            Fresh Produce &<br />
-            <span>Reliable Transport</span>
+            Agricultural Logistics &<br />
+            <span>Transport Solutions</span>
           </h1>
-          
+
           <p className="hero-subtitle">
-            Connecting farmers, traders, and transport partners 
-            across South Africa with premium agricultural produce 
-            and smart logistics solutions.
+            Providing reliable transport, shared load services,
+            and digital logistics solutions for farmers,
+            suppliers, and partners across South Africa.
           </p>
-          
+
           <div className="hero-buttons">
-            <Link to="/app" className="btn primary glow">
-              Get the App
-            </Link>
-            <Link to="/collaborate" className="btn secondary outlined">
-              Collaborate With Us
+            {/* Only the main request button stays */}
+            <Link to="/contact" className="btn primary glow">
+              Request Our Services
             </Link>
           </div>
         </div>
       </section>
 
-      {/* ================= MODERN ABOUT ================= */}
+      {/* ================= ABOUT ================= */}
       <section className="about-preview">
         <div className="container">
           <div className="about-content">
+
             <div>
-              <h2>Modern Agriculture, Traditional Values</h2>
+              <h2>Reliable Agricultural Logistics</h2>
+
               <p>
-                Jireh Trading Group specializes in seasonal agricultural produce 
-                and shared transport services. We connect farmers with markets through 
-                sustainable practices and efficient logistics that respect both the land 
-                and the people who work it.
+                Jireh Trading Group provides professional transport
+                and logistics solutions that connect producers,
+                suppliers, and markets. We focus on efficiency,
+                transparency, and long-term partnerships.
               </p>
+
+              <div className="about-features">
+                <div className="feature-item">
+                  <span className="feature-icon">🚛</span>
+                  <span>Vehicle Tracking</span>
+                </div>
+
+                <div className="feature-item">
+                  <span className="feature-icon">📊</span>
+                  <span>Digital Invoicing</span>
+                </div>
+
+                <div className="feature-item">
+                  <span className="feature-icon">🖥️</span>
+                  <span>Web Logistics System</span>
+                </div>
+              </div>
+
               <Link to="/about" className="text-link">
                 Learn More About Us
               </Link>
             </div>
-            
+
             <div className="about-graphic">
               <img
-                src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80"
-                alt="Farm landscape with fresh produce"
+                src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80"
+                alt="Agricultural logistics and transport"
                 loading="lazy"
               />
             </div>
+
           </div>
         </div>
       </section>
 
-      {/* ================= MODERN PRODUCTS ================= */}
-      <section className="products-preview">
+      {/* ================= SERVICES ================= */}
+      <section className="services-preview">
         <div className="container">
-          <h2 className="section-title">Our Seasonal Produce</h2>
-          
-          <div className="products-grid">
-            {/* Summer Harvest */}
-            <div className="product-card">
-              <div className="product-icon">
-                <img
-                  src={mangoImg}
-                  alt="Fresh Mangoes"
-                  loading="lazy"
-                  onError={(e) => {
-                    e.target.onerror = null;
-                    e.target.src = "https://images.unsplash.com/photo-1553279768-865429fa0078?auto=format&fit=crop&w=400&h=400&q=80";
-                  }}
-                />
-              </div>
-              <h3>Summer Harvest</h3>
-              <p>Sweet mangoes, juicy litchis, and tropical papayas from Pongola region</p>
+
+          <h2 className="section-title">Our Services</h2>
+
+          <p className="section-subtitle">
+            Professional logistics and transport solutions
+            designed for agricultural supply chains
+          </p>
+
+          <div className="services-grid">
+            <div className="service-card">
+              <div className="service-icon">🚚</div>
+              <h3>Transport Coordination</h3>
+              <p>
+                We manage and coordinate reliable transport
+                from farms to markets using optimized routes.
+              </p>
             </div>
 
-            {/* Winter Citrus */}
-            <div className="product-card">
-              <div className="product-icon">
-                <img
-                  src={orangeImg}
-                  alt="Fresh Citrus"
-                  loading="lazy"
-                  onError={(e) => {
-                    e.target.onerror = null;
-                    e.target.src = "https://images.unsplash.com/photo-1547514701-42782101795e?auto=format&fit=crop&w=400&h=400&q=80";
-                  }}
-                />
-              </div>
-              <h3>Winter Citrus</h3>
-              <p>Premium oranges, naartjies, and lemons from Limpopo province</p>
+            <div className="service-card">
+              <div className="service-icon">🤝</div>
+              <h3>Shared Load Services</h3>
+              <p>
+                Cost-effective shared transport solutions
+                that reduce delivery costs for producers.
+              </p>
             </div>
 
-            {/* Year-Round */}
-            <div className="product-card">
-              <div className="product-icon">
-                <img
-                  src={chilliImg}
-                  alt="Fresh Chillies"
-                  loading="lazy"
-                  onError={(e) => {
-                    e.target.onerror = null;
-                    e.target.src = "https://images.unsplash.com/photo-1594310811471-084b6c2e2bb5?auto=format&fit=crop&w=400&h=400&q=80";
-                  }}
-                />
-              </div>
-              <h3>Year-Round</h3>
-              <p>High-quality chillies, herbs, and greens available throughout the year</p>
+            <div className="service-card">
+              <div className="service-icon">📦</div>
+              <h3>Logistics Management</h3>
+              <p>
+                End-to-end logistics management including
+                tracking, documentation, and reporting.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ================= MODERN TRANSPORT ================= */}
+      {/* ================= ROUTES ================= */}
       <section className="transport-preview">
         <div className="container">
+
           <div className="transport-content">
-            <h2 className="section-title">Shared Load Transport</h2>
-            
-            <p>
-              Optimized logistics that maximize truck capacity and minimize costs. 
-              Our shared load system connects agricultural regions efficiently during peak seasons.
+
+            <h2 className="section-title">Service Areas</h2>
+
+            <p className="section-subtitle">
+              Key agricultural routes and regions we serve
             </p>
-            
+
+            <p>
+              We operate shared-load and dedicated transport
+              services across major farming regions and
+              distribution hubs.
+            </p>
+
             <div className="routes-grid">
-              <span className="route-tag">Pongola Region</span>
-              <span className="route-tag">Limpopo Province</span>
-              <span className="route-tag">Eastern Cape</span>
-              <span className="route-tag primary">Durban Metro</span>
+              <div className="route-card">
+                <div className="route-icon">📍</div>
+                <div className="route-info">
+                  <h4>Pongola</h4>
+                  <p>KwaZulu-Natal Region</p>
+                </div>
+              </div>
+
+              <div className="route-card">
+                <div className="route-icon">📍</div>
+                <div className="route-info">
+                  <h4>Limpopo</h4>
+                  <p>Northern Provinces</p>
+                </div>
+              </div>
+
+              <div className="route-card">
+                <div className="route-icon">📍</div>
+                <div className="route-info">
+                  <h4>Eastern Cape</h4>
+                  <p>Southern Farming Areas</p>
+                </div>
+              </div>
+
+              <div className="route-card primary">
+                <div className="route-icon">🚛</div>
+                <div className="route-info">
+                  <h4>Durban & Nationwide</h4>
+                  <p>Distribution Network</p>
+                </div>
+              </div>
             </div>
-            
-            <Link to="/transport" className="text-link">
-              View Full Routes & Schedules
+
+            <Link to="/contact" className="text-link">
+              Request Transport Services
             </Link>
+
           </div>
         </div>
       </section>
 
-      {/* ================= MODERN APP CTA ================= */}
-      <section className="app-cta">
+      {/* ================= LOGISTICS SYSTEM CTA ================= */}
+      <section className="webapp-cta">
         <div className="container">
-          <h2>Join 500+ Farmers & Traders</h2>
-          
+
+          <h2>Supplier Logistics Platform</h2>
+
           <p>
-            Real-time load matching, digital paperwork, 
-            and route optimization in your pocket. Streamline your 
-            agricultural logistics with our mobile platform.
+            Our web-based logistics system allows approved
+            suppliers and partners to monitor shipments,
+            track vehicles, and manage invoicing securely.
           </p>
-          
+
           <div className="cta-buttons">
-            <Link to="/app" className="btn primary glow large">
-              Download App Now
+            <Link to="/contact" className="btn primary glow large">
+              Request System Access
             </Link>
+
+            {/* Keep partner button here only */}
             <Link to="/contact" className="btn secondary outlined large">
-              Talk to Sales
+              Register as Partner
             </Link>
           </div>
-          
-          <div className="app-stores">
-            <div className="store-badge">App Store</div>
-            <div className="store-badge">Google Play</div>
+
+          <div className="platform-info">
+            <div className="platform-badge">Web Platform</div>
+            <div className="platform-badge">Supplier Access</div>
+            <div className="platform-badge">Secure System</div>
           </div>
+
         </div>
       </section>
+
     </main>
   );
 };

@@ -32,40 +32,11 @@
   color: inherit;
 }
 
-.brand-mark {
-  width: 38px;
-  height: 38px;
-  border-radius: 18px;
-  background: radial-gradient(circle at 30% 10%, #ffffff, #fef8e6 35%, #e2b13a 60%, #c68422 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow:
-    0 0 0 2px rgba(255, 255, 255, 0.08),
-    0 12px 22px rgba(0, 0, 0, 0.45);
-  position: relative;
-  overflow: hidden;
-}
-
-.brand-sprout {
-  width: 18px;
-  height: 18px;
-  border-radius: 999px 999px 0 999px;
-  background: linear-gradient(145deg, var(--leaf-green), var(--olive-green));
-  position: relative;
-  transform: rotate(-35deg);
-}
-
-.brand-sprout::after {
-  content: "";
-  position: absolute;
-  width: 12px;
-  height: 8px;
-  border-radius: 999px 999px 999px 0;
-  background: linear-gradient(145deg, #c9e96b, var(--yellow-gold));
-  bottom: -3px;
-  right: -4px;
-  opacity: 0.9;
+.brand-logo {
+  width: 50px;
+  height: auto;
+  display: block;
+  border-radius: 8px;
 }
 
 .brand-text {
@@ -164,18 +135,19 @@
 
 /* Mobile */
 .nav-toggle {
-  display: none;
+  display: none; /* Hidden by default, shown on mobile */
   width: 34px;
   height: 34px;
   border-radius: 50%;
   border: 1px solid rgba(255, 255, 255, 0.14);
   background: rgba(0, 0, 0, 0.28);
-  display: none;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   gap: 4px;
   cursor: pointer;
   padding: 0;
+  position: relative;
 }
 
 .nav-toggle span {
@@ -184,14 +156,23 @@
   border-radius: 99px;
   background: #ffffff;
   transition: transform 0.2s ease, opacity 0.2s ease;
+  position: absolute;
+}
+
+.nav-toggle span:first-child {
+  transform: translateY(-4px);
+}
+
+.nav-toggle span:last-child {
+  transform: translateY(4px);
 }
 
 .nav-toggle.is-open span:first-child {
-  transform: translateY(2px) rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .nav-toggle.is-open span:last-child {
-  transform: translateY(-2px) rotate(-45deg);
+  transform: rotate(-45deg);
 }
 
 .nav-mobile {
@@ -235,7 +216,7 @@
   }
 
   .nav-toggle {
-    display: flex;
+    display: flex; /* Show on mobile */
   }
 
   .nav-mobile {
@@ -249,10 +230,23 @@
   .brand-name {
     font-size: 0.95rem;
   }
+  
+  .brand-logo {
+    width: 40px; /* Slightly smaller on mobile */
+  }
 }
-.brand-logo {
-  width: 50px; /* adjust size */
-  height: auto;
-  display: block;
-  border-radius: 8px; /* optional: round corners */
+
+/* Very small screens */
+@media (max-width: 480px) {
+  .brand-name {
+    font-size: 0.85rem;
+  }
+  
+  .brand-tagline {
+    font-size: 0.65rem;
+  }
+  
+  .brand-logo {
+    width: 36px;
+  }
 }

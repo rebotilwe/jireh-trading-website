@@ -170,14 +170,13 @@
 }
 
 /* ================= MODERN BUTTONS ================= */
-/* ================= MODERN BUTTONS ================= */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.6rem;             /* slightly smaller gap */
-  padding: 0.7rem 1.5rem;  /* reduced padding for sleeker look */
-  font-size: 0.9rem;       /* slightly smaller font */
+  gap: 0.6rem;
+  padding: 0.7rem 1.5rem;
+  font-size: 0.9rem;
   font-weight: 600;
   text-decoration: none;
   border-radius: var(--radius-full);
@@ -187,7 +186,7 @@
   position: relative;
   overflow: hidden;
   letter-spacing: 0.02em;
-  max-width: 220px;        /* limit width on desktop */
+  max-width: 220px;
 }
 
 .btn::before {
@@ -250,9 +249,9 @@
 
 /* Large buttons adjustment */
 .btn.large {
-  padding: 0.85rem 2rem;   /* slightly smaller than before */
-  font-size: 0.95rem;      /* slightly smaller */
-  max-width: 240px;        /* cap width for large buttons */
+  padding: 0.85rem 2rem;
+  font-size: 0.95rem;
+  max-width: 240px;
 }
 
 /* Specific buttons in hero and CTA sections */
@@ -260,21 +259,21 @@
 .cta-buttons .btn {
   padding: 0.75rem 1.6rem;
   font-size: 0.92rem;
-  max-width: 220px;        /* reduced width for desktop */
+  max-width: 220px;
 }
 
 /* ================= RESPONSIVE ================= */
 @media (max-width: 1024px) {
   .hero-buttons .btn,
   .cta-buttons .btn {
-    max-width: 240px;      /* slightly wider for tablets */
+    max-width: 240px;
   }
 }
 
 @media (max-width: 768px) {
   .btn {
     width: 100%;
-    max-width: 260px;      /* mobile-friendly width */
+    max-width: 260px;
     justify-content: center;
     padding: 0.65rem 1.2rem;
     font-size: 0.88rem;
@@ -297,7 +296,6 @@
     font-size: 0.88rem;
   }
 }
-
 
 /* ================= MODERN ABOUT ================= */
 .about-preview {
@@ -371,6 +369,29 @@
   transform: scale(1.05);
 }
 
+/* ================= ABOUT FEATURES ================= */
+.about-features {
+  display: flex;
+  gap: 1.5rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(47, 143, 60, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-full);
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.feature-icon {
+  font-size: 1.2rem;
+}
+
 /* ================= MODERN TEXT LINK ================= */
 .text-link {
   display: inline-flex;
@@ -398,8 +419,8 @@
   transform: translateX(4px);
 }
 
-/* ================= MODERN PRODUCTS ================= */
-.products-preview {
+/* ================= SERVICES SECTION ================= */
+.services-preview {
   padding: 6rem 0;
   background: linear-gradient(135deg, #f8faf9 0%, #f0f4f2 100%);
   position: relative;
@@ -410,7 +431,7 @@
   color: var(--leaf-green);
   font-size: 2.5rem;
   font-weight: 800;
-  margin-bottom: 4rem;
+  margin-bottom: 1rem;
   position: relative;
 }
 
@@ -426,13 +447,22 @@
   border-radius: 2px;
 }
 
-.products-grid {
+.section-subtitle {
+  text-align: center;
+  color: var(--light-text);
+  font-size: 1.1rem;
+  margin: 1rem auto 3rem;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2.5rem;
 }
 
-.product-card {
+.service-card {
   background: white;
   padding: 2.5rem 2rem;
   border-radius: var(--radius-lg);
@@ -444,7 +474,7 @@
   overflow: hidden;
 }
 
-.product-card::before {
+.service-card::before {
   content: '';
   position: absolute;
   top: 0;
@@ -457,44 +487,35 @@
   transition: transform var(--transition-normal);
 }
 
-.product-card:hover {
+.service-card:hover {
   transform: translateY(-10px) scale(1.02);
   box-shadow: var(--shadow-hover);
 }
 
-.product-card:hover::before {
+.service-card:hover::before {
   transform: scaleX(1);
 }
 
-.product-icon {
-  width: 100px;
-  height: 100px;
+.service-icon {
+  width: 80px;
+  height: 80px;
   margin: 0 auto 1.5rem;
   border-radius: 50%;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  background: rgba(47, 143, 60, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
 }
 
-.product-icon img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform var(--transition-slow);
-}
-
-.product-card:hover .product-icon img {
-  transform: scale(1.1);
-}
-
-.product-card h3 {
+.service-card h3 {
   color: var(--leaf-green);
   font-size: 1.4rem;
   font-weight: 700;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
 }
 
-.product-card p {
+.service-card p {
   color: var(--light-text);
   font-size: 0.95rem;
   line-height: 1.6;
@@ -523,56 +544,77 @@
   margin-right: auto;
 }
 
+/* ================= TRANSPORT ROUTES CARDS ================= */
 .routes-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
   margin: 2.5rem 0;
 }
 
-.route-tag {
-  padding: 0.6rem 1.75rem;
+.route-card {
   background: rgba(245, 198, 68, 0.1);
-  color: var(--yellow-gold);
   border: 1px solid rgba(245, 198, 68, 0.3);
-  border-radius: var(--radius-full);
-  font-size: 0.9rem;
-  font-weight: 600;
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
   transition: all var(--transition-normal);
-  position: relative;
-  overflow: hidden;
+  text-align: left;
 }
 
-.route-tag::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, 
-    transparent, 
-    rgba(245, 198, 68, 0.2), 
-    transparent);
-  transition: left 0.5s ease;
+.route-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(245, 198, 68, 0.2);
 }
 
-.route-tag:hover::before {
-  left: 100%;
-}
-
-.route-tag:hover,
-.route-tag.primary {
+.route-card.primary {
   background: var(--gradient-primary);
-  color: #1a1a1a;
-  border-color: transparent;
-  transform: translateY(-2px);
-  box-shadow: 0 5px 20px rgba(245, 198, 68, 0.3);
+  border: none;
 }
 
-/* ================= MODERN APP CTA ================= */
-.app-cta {
+.route-card.primary .route-icon {
+  background: rgba(255, 255, 255, 0.9);
+  color: #222;
+}
+
+.route-card.primary h4,
+.route-card.primary p {
+  color: #222;
+}
+
+.route-icon {
+  width: 50px;
+  height: 50px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.route-info {
+  flex: 1;
+}
+
+.route-info h4 {
+  color: var(--leaf-green);
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+.route-info p {
+  color: var(--light-text);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* ================= WEB APP CTA ================= */
+.webapp-cta {
   padding: 6rem 0;
   background: var(--gradient-green);
   color: white;
@@ -581,7 +623,7 @@
   overflow: hidden;
 }
 
-.app-cta::before {
+.webapp-cta::before {
   content: '';
   position: absolute;
   top: 0;
@@ -600,7 +642,7 @@
   66% { transform: translateX(-5px) rotate(-0.5deg); }
 }
 
-.app-cta h2 {
+.webapp-cta h2 {
   font-size: 2.5rem;
   font-weight: 800;
   margin-bottom: 1.5rem;
@@ -608,7 +650,7 @@
   z-index: 2;
 }
 
-.app-cta p {
+.webapp-cta p {
   font-size: 1.15rem;
   opacity: 0.95;
   line-height: 1.7;
@@ -628,15 +670,16 @@
   z-index: 2;
 }
 
-.app-stores {
+.platform-info {
   display: flex;
   gap: 1rem;
   justify-content: center;
   position: relative;
   z-index: 2;
+  flex-wrap: wrap;
 }
 
-.store-badge {
+.platform-badge {
   padding: 0.6rem 1.5rem;
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
@@ -647,7 +690,7 @@
   transition: all var(--transition-normal);
 }
 
-.store-badge:hover {
+.platform-badge:hover {
   background: rgba(255, 255, 255, 0.25);
   transform: translateY(-2px);
 }
@@ -703,22 +746,32 @@
     font-size: 2rem;
   }
   
-  .products-grid {
+  .services-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
   
   .routes-grid {
-    flex-direction: column;
-    align-items: center;
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
   
-  .route-tag {
-    width: 200px;
-  }
-  
-  .app-cta h2 {
+  .webapp-cta h2 {
     font-size: 2rem;
+  }
+  
+  .about-features {
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  .feature-item {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+  }
+  
+  .route-card {
+    padding: 1.25rem;
   }
 }
 
@@ -749,15 +802,28 @@
     font-size: 2rem;
   }
   
-  .product-card {
+  .service-card {
     padding: 2rem 1.5rem;
   }
   
-  .product-icon {
-    width: 80px;
-    height: 80px;
+  .service-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 1.5rem;
+  }
+  
+  .platform-info {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .platform-badge {
+    width: 200px;
+    text-align: center;
   }
 }
+
 /* ================= FINAL BUTTON FIX ================= */
 
 /* Always control button containers */
@@ -805,31 +871,126 @@
     min-height: 46px !important;
   }
 }
+
 /* Force space AFTER CTA buttons */
 .cta-buttons {
   margin-bottom: 3rem !important;
 }
-
-/* If you have app store / next section below */
-.app-stores {
-  margin-top: 2rem !important;
+/* ================= MODERNIZED ROUTES GRID ================= */
+.routes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 2.5rem 0;
 }
-/* ================= FIX BIG BUTTONS ON SMALL PHONES ================= */
 
-/* Small phones (320px and similar) */
-@media (max-width: 360px) {
+/* Default route card style */
+.route-card {
+  background: rgba(47, 143, 60, 0.05); /* very light greenish */
+  border: 1px solid rgba(47, 143, 60, 0.15);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all var(--transition-normal);
+  text-align: left;
+}
 
-  /* Target HERO buttons only */
-  .hero-cta .btn {
-    width: 100% !important;
-    max-width: 240px !important;   /* smaller than before */
-    padding: 0.6rem 1.2rem !important;
-    font-size: 0.85rem !important;
-    border-radius: 999px;
+.route-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-glow);
+}
+
+/* Primary highlight card (Durban & Nationwide) */
+.route-card.primary {
+  background: var(--gradient-green);
+  border: none;
+  color: white;
+}
+
+.route-card.primary .route-icon {
+  background: rgba(255, 255, 255, 0.9);
+  color: #222;
+}
+
+.route-card.primary h4,
+.route-card.primary p {
+  color: white; /* white text on green */
+}
+
+/* Route icon */
+.route-icon {
+  width: 55px;
+  height: 55px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  transition: all var(--transition-normal);
+}
+
+.route-card:hover .route-icon {
+  transform: scale(1.1);
+}
+
+/* Text inside each card */
+.route-info h4 {
+  color: var(--leaf-green);
+  font-size: 1.15rem;
+  margin-bottom: 0.25rem;
+  font-weight: 700;
+  transition: color var(--transition-normal);
+}
+
+.route-info p {
+  color: var(--light-text);
+  font-size: 0.9rem;
+  margin: 0;
+  transition: color var(--transition-normal);
+}
+
+.route-card:hover .route-info h4 {
+  color: var(--olive-green);
+}
+
+.route-card:hover .route-info p {
+  color: var(--leaf-green);
+}
+
+/* Rounded and shadow effect for icon when primary */
+.route-card.primary .route-icon {
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 1.6rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .routes-grid {
+    grid-template-columns: 1fr;
   }
 
-  /* Reduce gap slightly */
-  .hero-cta {
-    gap: 0.8rem !important;
+  .route-card {
+    flex-direction: row;
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+
+  .route-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.4rem;
+  }
+
+  .route-info h4 {
+    font-size: 1.1rem;
+  }
+
+  .route-info p {
+    font-size: 0.85rem;
   }
 }

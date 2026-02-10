@@ -73,6 +73,7 @@
   color: white;
   max-width: 800px;
   margin: 0 auto;
+  padding: 0 1rem;
 }
 
 .hero-badge {
@@ -88,8 +89,6 @@
   margin-bottom: 1.5rem;
   border: 1px solid rgba(245, 198, 68, 0.3);
   text-transform: uppercase;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
 }
 
 .hero-title {
@@ -98,18 +97,14 @@
   line-height: 1.1;
   margin-bottom: 1.5rem;
   color: white;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
 }
 
 .hero-subtitle {
   font-size: 1.2rem;
   max-width: 600px;
-  margin: 0 auto 3rem;
+  margin: 0 auto 2rem;
   opacity: 0.95;
   line-height: 1.6;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
 }
 
 .hero-stats {
@@ -117,7 +112,7 @@
   justify-content: center;
   gap: 3rem;
   flex-wrap: wrap;
-  margin-top: 3rem;
+  margin-top: 2rem;
   padding-top: 2rem;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
@@ -126,6 +121,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-width: 100px;
 }
 
 .stat-number {
@@ -141,6 +137,7 @@
   font-size: 0.9rem;
   font-weight: 500;
   opacity: 0.9;
+  text-align: center;
 }
 
 /* ================= SECTION HEADER ================= */
@@ -153,9 +150,7 @@
   color: var(--leaf-green);
   font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
+  margin-bottom: 0.75rem;
 }
 
 .section-header p {
@@ -164,8 +159,6 @@
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.6;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
 }
 
 /* ================= ROUTES SECTION ================= */
@@ -190,7 +183,10 @@
   transition: all var(--transition-normal);
   cursor: pointer;
   position: relative;
-  overflow: visible;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 320px;
 }
 
 .route-card::before {
@@ -218,13 +214,14 @@
 
 .route-header {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 1rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
+  min-height: 70px;
 }
 
 .route-icon {
-  font-size: 2rem;
+  font-size: 1.8rem;
   width: 50px;
   height: 50px;
   background: var(--leaf-green-light);
@@ -233,6 +230,7 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  margin-top: 0.25rem;
 }
 
 .route-titles {
@@ -243,23 +241,29 @@
 .route-titles h3 {
   color: var(--leaf-green);
   font-size: 1.3rem;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
   font-weight: 700;
   line-height: 1.2;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
 }
 
 .route-produce {
-  color: #666;
+  color: var(--orange-peach);
   font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.route-feature {
+  color: #666;
+  font-size: 0.85rem;
   font-weight: 500;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
+  font-style: italic;
+  margin-bottom: 0.5rem;
 }
 
 .route-details {
   margin-bottom: 1.5rem;
+  flex: 1;
 }
 
 .route-info {
@@ -267,6 +271,8 @@
   justify-content: space-between;
   padding: 0.5rem 0;
   border-bottom: 1px solid var(--off-white);
+  align-items: center;
+  min-height: 36px;
 }
 
 .route-info:last-child {
@@ -275,11 +281,11 @@
 
 .info-label {
   color: #666;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 500;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  flex-shrink: 0;
+  margin-right: 1rem;
 }
 
 .info-value {
@@ -290,12 +296,7 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin-left: 0.5rem;
-}
-
-.route-actions {
-  margin-top: 1rem;
-  text-align: center;
+  flex: 1;
 }
 
 /* ================= BUTTONS ================= */
@@ -312,8 +313,8 @@
   border: 2px solid transparent;
   cursor: pointer;
   white-space: nowrap;
-  overflow-wrap: normal;
-  min-width: 120px;
+  min-width: 140px;
+  max-width: 100%;
 }
 
 .btn.primary {
@@ -342,13 +343,34 @@
 .btn.small {
   padding: 0.5rem 1.25rem;
   font-size: 0.85rem;
-  min-width: 100px;
+  min-width: 120px;
 }
 
 .btn.large {
   padding: 0.9rem 2rem;
   font-size: 1rem;
   min-width: 180px;
+}
+
+/* ================= CENTERED BUTTONS ================= */
+.centered-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.route-actions {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--off-white);
+}
+
+.route-actions .btn {
+  width: 100%;
+  max-width: 220px;
+  margin: 0 auto;
 }
 
 /* ================= BENEFITS SECTION ================= */
@@ -373,7 +395,9 @@
   border: 1px solid rgba(47, 143, 60, 0.1);
   transition: all var(--transition-normal);
   text-align: center;
-  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .benefit-card:hover {
@@ -392,264 +416,24 @@
   font-size: 1.3rem;
   margin-bottom: 0.75rem;
   font-weight: 600;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
 }
 
 .benefit-card p {
   color: #666;
   line-height: 1.6;
   font-size: 0.95rem;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
+  margin-bottom: 0;
 }
 
-/* ================= TRANSPORT GRID ================= */
-.transport-grid-section {
-  padding: 5rem 0;
-  background: white;
-}
-
-.transport-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 2.5rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.transport-card {
-  background: white;
-  border-radius: var(--radius-lg);
-  overflow: visible;
-  box-shadow: var(--shadow-card);
-  border: 1px solid rgba(47, 143, 60, 0.1);
-  transition: all var(--transition-normal);
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.transport-card:hover {
-  transform: translateY(-10px);
-  box-shadow: var(--shadow-hover);
-  border-color: rgba(245, 198, 68, 0.3);
-}
-
-/* Image Container */
-.transport-image-container {
-  position: relative;
-  height: 220px;
-  overflow: hidden;
-}
-
-.transport-image-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform var(--transition-slow);
-}
-
-.transport-card:hover .transport-image-container img {
-  transform: scale(1.05);
-}
-
-/* Placeholder for failed images */
-.transport-placeholder {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, var(--leaf-green), var(--olive-green));
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity var(--transition-normal);
-  gap: 1rem;
-  padding: 1.5rem;
-}
-
-.transport-placeholder.active {
-  opacity: 1;
-}
-
-.placeholder-icon {
-  font-size: 3rem;
-}
-
-.transport-placeholder span {
-  color: white;
-  font-size: 1.2rem;
-  font-weight: 600;
-  text-align: center;
-  line-height: 1.3;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-}
-
-/* Transport Content */
-.transport-content {
-  padding: 1.5rem;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  min-height: 0;
-}
-
-.transport-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 1rem;
-  gap: 0.5rem;
-}
-
-.transport-header h3 {
-  color: var(--leaf-green);
-  font-size: 1.4rem;
-  font-weight: 700;
-  margin: 0;
-  flex: 1;
-  line-height: 1.3;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  hyphens: auto;
-}
-
-.service-badge {
-  background: var(--leaf-green-light);
-  color: var(--leaf-green);
-  padding: 0.3rem 0.8rem;
-  border-radius: var(--radius-full);
-  font-size: 0.8rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-
-.transport-description {
-  color: #5a6a5a;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-  font-size: 0.95rem;
-  flex-grow: 1;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  hyphens: auto;
-}
-
-.transport-specs {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-  background: var(--off-white);
-  padding: 1rem;
-  border-radius: var(--radius-md);
-  overflow: hidden;
-}
-
-.spec {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  min-width: 0;
-}
-
-.spec-label {
-  color: #666;
-  font-size: 0.8rem;
-  font-weight: 500;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.spec-value {
-  color: var(--leaf-green);
-  font-weight: 600;
-  font-size: 0.9rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.transport-features {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
-  max-height: 80px;
-  overflow-y: auto;
-  padding-right: 5px;
-}
-
-.feature-tag {
-  background: var(--off-white);
-  color: #666;
-  padding: 0.4rem 0.8rem;
-  border-radius: var(--radius-full);
-  font-size: 0.8rem;
-  font-weight: 500;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-
-.transport-footer {
-  display: flex;
-  gap: 1rem;
+.benefit-card a {
   margin-top: auto;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.transport-cta,
-.transport-inquiry {
-  padding: 0.6rem 1.25rem;
-  border-radius: var(--radius-full);
-  font-weight: 600;
-  font-size: 0.85rem;
-  text-decoration: none;
-  text-align: center;
-  flex: 1;
-  transition: all var(--transition-normal);
-  cursor: pointer;
-  border: none;
-  min-width: 100px;
-  white-space: nowrap;
-  max-width: 140px;
-}
-
-.transport-cta {
-  background: var(--leaf-green);
-  color: white;
-}
-
-.transport-cta:hover {
-  background: var(--olive-green);
-  transform: translateY(-2px);
-}
-
-.transport-inquiry {
-  background: transparent;
-  border: 2px solid var(--leaf-green);
-  color: var(--leaf-green);
-}
-
-.transport-inquiry:hover {
-  background: var(--leaf-green);
-  color: white;
-  transform: translateY(-2px);
+  padding-top: 1rem;
 }
 
 /* ================= PROCESS SECTION ================= */
 .process-section {
   padding: 5rem 0;
-  background: linear-gradient(135deg, var(--off-white) 0%, #f4f7f5 100%);
+  background: white;
 }
 
 .process-steps {
@@ -666,6 +450,7 @@
   align-items: flex-start;
   gap: 1.5rem;
   position: relative;
+  padding: 1rem;
 }
 
 .step::before {
@@ -684,21 +469,51 @@
   flex-shrink: 0;
 }
 
+.step-content {
+  flex: 1;
+}
+
 .step-content h3 {
   color: var(--leaf-green);
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
   font-weight: 600;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
 }
 
 .step-content p {
   color: #666;
   line-height: 1.6;
   font-size: 0.95rem;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
+  margin: 0;
+}
+
+/* ================= WEB APP PREVIEW ================= */
+.transport-grid-section {
+  padding: 5rem 0;
+}
+
+.platform-info {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+}
+
+.platform-badge {
+  padding: 0.6rem 1.5rem;
+  background: rgba(47, 143, 60, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1px solid rgba(47, 143, 60, 0.2);
+  transition: all var(--transition-normal);
+}
+
+.platform-badge:hover {
+  background: rgba(47, 143, 60, 0.2);
+  transform: translateY(-2px);
 }
 
 /* ================= BOOKING CTA ================= */
@@ -712,19 +527,12 @@
 .booking-content {
   max-width: 800px;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .booking-content h2 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
   color: white;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  width: 100%;
-  text-align: center;
 }
 
 .booking-content p {
@@ -732,10 +540,9 @@
   margin-bottom: 3rem;
   opacity: 0.95;
   line-height: 1.6;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
   max-width: 600px;
-  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .booking-buttons {
@@ -744,20 +551,6 @@
   justify-content: center;
   flex-wrap: wrap;
   margin-bottom: 3rem;
-  width: 100%;
-}
-
-.booking-buttons .btn.large {
-  padding: 0.9rem 2rem;
-  font-size: 1rem;
-  min-width: 200px;
-  max-width: 250px;
-}
-
-.booking-buttons .btn.secondary {
-  padding: 0.9rem 2rem;
-  min-width: 180px;
-  max-width: 220px;
 }
 
 .contact-info {
@@ -766,7 +559,6 @@
   gap: 2rem;
   padding-top: 2rem;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
-  width: 100%;
 }
 
 .info-item {
@@ -794,9 +586,6 @@
   opacity: 0.8;
   margin-bottom: 0.25rem;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  width: 100%;
 }
 
 .info-value {
@@ -804,9 +593,6 @@
   font-size: 1.1rem;
   color: var(--yellow-gold);
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  width: 100%;
 }
 
 /* ================= FAQ SECTION ================= */
@@ -821,8 +607,6 @@
   text-align: center;
   margin-bottom: 3rem;
   font-weight: 700;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
 }
 
 .faq-grid {
@@ -839,7 +623,6 @@
   border-radius: var(--radius-lg);
   border: 1px solid rgba(47, 143, 60, 0.1);
   transition: all var(--transition-normal);
-  overflow: visible;
 }
 
 .faq-item:hover {
@@ -853,44 +636,17 @@
   margin-bottom: 1rem;
   font-weight: 600;
   line-height: 1.4;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
 }
 
 .faq-item p {
   color: #5a6a5a;
   line-height: 1.6;
   font-size: 0.95rem;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-}
-
-/* ================= TEXT UTILITY CLASSES ================= */
-.text-container {
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.truncate {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.multiline-truncate {
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  margin: 0;
 }
 
 /* ================= RESPONSIVE ================= */
 @media (max-width: 992px) {
-  .transport-grid {
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
-  }
-  
   .benefits-grid,
   .faq-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -900,6 +656,10 @@
     grid-template-columns: 1fr;
     max-width: 500px;
   }
+  
+  .routes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 768px) {
@@ -907,8 +667,8 @@
     min-height: 60vh;
   }
   
-  .hero-content {
-    padding: 0 1rem;
+  .hero-overlay {
+    padding: 3rem 0;
   }
   
   .hero-title {
@@ -927,15 +687,11 @@
     font-size: 2rem;
   }
   
-  .transport-grid {
-    grid-template-columns: 1fr;
-    max-width: 400px;
-    margin: 0 auto;
-  }
-  
   .benefits-grid,
   .faq-grid {
     grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
   }
   
   .booking-buttons {
@@ -956,43 +712,28 @@
     margin: 0 auto;
   }
   
-  .transport-footer {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.75rem;
-  }
-  
-  .transport-cta,
-  .transport-inquiry {
-    width: 100%;
-    max-width: 200px;
-    padding: 0.65rem 1.5rem;
-  }
-  
-  .transport-specs {
+  .routes-grid {
     grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
   }
   
-  .transport-card {
-    max-width: 100%;
+  .route-card {
+    min-height: 300px;
   }
   
-  .transport-description {
-    font-size: 0.9rem;
-    line-height: 1.5;
+  .section-header h2 {
+    font-size: 2rem;
   }
   
-  .transport-header h3 {
-    font-size: 1.2rem;
+  .booking-content h2,
+  .faq-section h2 {
+    font-size: 2rem;
   }
   
-  .transport-features {
-    max-height: 60px;
-  }
-  
-  .feature-tag {
-    font-size: 0.75rem;
-    padding: 0.3rem 0.6rem;
+  .booking-content p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
   }
 }
 
@@ -1005,84 +746,86 @@
     font-size: 2rem;
   }
   
-  .section-header h2,
-  .benefits-section h2,
-  .booking-content h2,
-  .faq-section h2 {
-    font-size: 2rem;
+  .hero-badge {
+    font-size: 0.8rem;
+    padding: 0.4rem 1rem;
   }
   
-  .transport-image-container {
-    height: 200px;
+  .hero-stats {
+    gap: 1.5rem;
   }
   
-  .routes-grid {
-    grid-template-columns: 1fr;
+  .stat {
+    min-width: 80px;
   }
   
-  .step {
+  .stat-number {
+    font-size: 1.8rem;
+  }
+  
+  .stat-label {
+    font-size: 0.8rem;
+  }
+  
+  .section-header h2 {
+    font-size: 1.8rem;
+  }
+  
+  .section-header p {
+    font-size: 1rem;
+  }
+  
+  .route-header {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    gap: 0.75rem;
   }
   
-  .transport-specs {
-    grid-template-columns: 1fr;
+  .route-icon {
+    margin-top: 0;
   }
   
-  .transport-footer {
+  .route-titles h3 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  
+  .route-info {
     flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+    padding: 0.75rem 0;
   }
   
-  .transport-cta,
-  .transport-inquiry {
+  .info-label,
+  .info-value {
+    text-align: left;
     width: 100%;
   }
   
-  .feature-tag {
-    font-size: 0.7rem;
-  }
-  
-  .booking-content h2 {
-    font-size: 2rem;
-  }
-  
-  .booking-content p {
-    font-size: 1rem;
-    margin-bottom: 2rem;
-  }
-  
-  .booking-buttons .btn {
-    padding: 0.75rem 1.25rem;
-    font-size: 0.9rem;
+  .btn {
+    width: 100%;
+    max-width: 100%;
+    padding: 0.6rem 1.25rem;
+    font-size: 0.85rem;
   }
   
   .btn.large {
     padding: 0.8rem 1.5rem;
-    font-size: 0.95rem;
   }
   
-  .transport-cta,
-  .transport-inquiry {
-    padding: 0.6rem 1.25rem;
-    font-size: 0.85rem;
+  .platform-badge {
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
   }
 }
 
 @media (max-width: 360px) {
   .booking-buttons .btn {
     min-width: 100%;
-    max-width: 100%;
     font-size: 0.85rem;
     padding: 0.7rem 1rem;
-  }
-  
-  .transport-cta,
-  .transport-inquiry {
-    min-width: 100%;
-    max-width: 100%;
-    font-size: 0.8rem;
-    padding: 0.6rem 1rem;
   }
   
   .booking-content h2 {
@@ -1091,6 +834,10 @@
   
   .booking-content p {
     font-size: 0.95rem;
+  }
+  
+  .route-card {
+    padding: 1.25rem;
   }
 }
 
@@ -1106,10 +853,10 @@
 }
 
 /* Focus styles for accessibility */
-.transport-cta:focus-visible,
 .btn:focus-visible,
 .route-card:focus-visible,
-.transport-card:focus-within {
+.benefit-card:focus-visible,
+.faq-item:focus-visible {
   outline: 2px solid var(--leaf-green);
   outline-offset: 2px;
 }
@@ -1118,8 +865,9 @@
 @media print {
   .transport-hero,
   .booking-cta,
-  .transport-footer,
-  .route-actions {
+  .route-actions,
+  .benefit-card a,
+  .platform-info {
     display: none;
   }
   
@@ -1127,26 +875,11 @@
     background: white;
   }
   
-  .transport-card {
+  .route-card,
+  .benefit-card,
+  .faq-item {
     break-inside: avoid;
     box-shadow: none;
     border: 1px solid #ddd;
   }
-  
-  .transport-features {
-    max-height: none;
-    overflow: visible;
-  }
-}
-/* Ensure buttons are perfectly centered */
-.centered-buttons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 1rem;
-  width: 100%;
-}
-
-.route-actions .btn {
-  margin: 0 auto;
 }

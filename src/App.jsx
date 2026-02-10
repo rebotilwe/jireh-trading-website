@@ -7,9 +7,10 @@ import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import Products from "./pages/Products/Products";
 import Transport from "./pages/Transport/Transport";
-import AppPage from "./pages/AppPage/AppPage";
+
 import Collaborate from "./pages/Collaborate/Collaborate";
 import Contact from "./pages/Contact/Contact";
+import Platform from "./pages/Platform/Platform";
 
 function App() {
   return (
@@ -21,7 +22,8 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/products" element={<Products />} />
         <Route path="/transport" element={<Transport />} />
-        <Route path="/app" element={<AppPage />} />
+        <Route path="/platform" element={<Platform />}/>
+     
         <Route path="/collaborate" element={<Collaborate />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
