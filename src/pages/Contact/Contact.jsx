@@ -43,45 +43,63 @@ const Contact = () => {
     return errors;
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const errors = validateForm();
-    if (Object.keys(errors).length) {
-      setFormErrors(errors);
-      return;
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  const errors = validateForm();
+  if (Object.keys(errors).length) {
+    setFormErrors(errors);
+    return;
+  }
+
+  setSubmitStatus("loading");
+
+  try {
+    const form = new FormData();
+
+    // Append form fields
+    Object.keys(formData).forEach((key) => {
+      form.append(key, formData[key]);
+    });
+
+    const response = await fetch("https://formspree.io/f/mvzbdzog", {
+      method: "POST",
+      body: form,
+      headers: {
+        Accept: "application/json",
+      },
+    });
+
+    const result = await response.json();
+
+    if (!response.ok) {
+      throw new Error(result.error || "Submission failed");
     }
 
-    setSubmitStatus("loading");
+    setSubmitStatus("success");
 
-    try {
-      // Replace YOUR_FORMSPREE_ENDPOINT with the actual endpoint the client will provide
-      const response = await fetch("https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+    // Reset form
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      department: "",
+      requestType: "",
+      collaborateRole: "",
+      subject: "",
+      message: "",
+      consent: false,
+    });
 
-      if (!response.ok) throw new Error("Network response was not ok");
+    setFormErrors({});
 
-      setSubmitStatus("success");
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        department: "",
-        requestType: "",
-        collaborateRole: "",
-        subject: "",
-        message: "",
-        consent: false,
-      });
-      setFormErrors({});
-      setTimeout(() => setSubmitStatus(null), 4000);
-    } catch (error) {
-      console.error("Form submission error:", error);
-      setSubmitStatus("error");
-    }
-  };
+    setTimeout(() => setSubmitStatus(null), 4000);
+
+  } catch (error) {
+    console.error("Form submission error:", error);
+    setSubmitStatus("error");
+  }
+};
 
   const getButtonText = () => {
     switch (submitStatus) {

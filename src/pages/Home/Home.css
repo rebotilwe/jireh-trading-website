@@ -41,12 +41,24 @@
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', system-ui, sans-serif;
   color: var(--dark-text);
   overflow-x: hidden;
+  /* Global hyphenation prevention */
+  hyphens: none;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  word-break: normal;
+  overflow-wrap: normal;
 }
 
 .container {
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 2rem;
+  /* Prevent hyphenation in containers */
+  hyphens: none;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  word-break: normal;
+  overflow-wrap: normal;
 }
 
 /* ================= MODERN HERO ================= */
@@ -58,6 +70,12 @@
   align-items: center;
   color: var(--white);
   background: var(--dark-text);
+  /* Prevent hyphenation in hero */
+  hyphens: none;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  word-break: normal;
+  overflow-wrap: normal;
 }
 
 .hero-background {
@@ -104,6 +122,12 @@
   z-index: 3;
   text-align: center;
   position: relative;
+  /* Prevent hyphenation in hero content */
+  hyphens: none;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  word-break: normal;
+  overflow-wrap: normal;
 }
 
 .hero-badge {
@@ -142,6 +166,12 @@
   font-weight: 800;
   line-height: 1.05;
   margin-bottom: 1.5rem;
+  /* Prevent hyphenation in title */
+  hyphens: none;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  word-break: normal;
+  overflow-wrap: normal;
 }
 
 .hero-title span {
@@ -159,6 +189,12 @@
   opacity: 0.95;
   line-height: 1.6;
   font-weight: 400;
+  /* CRITICAL: Prevent hyphenation in subtitle */
+  hyphens: none;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  word-break: normal;
+  overflow-wrap: normal;
 }
 
 .hero-buttons {
@@ -187,6 +223,13 @@
   overflow: hidden;
   letter-spacing: 0.02em;
   max-width: 220px;
+  /* Prevent hyphenation in buttons */
+  hyphens: none;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  word-break: normal;
+  overflow-wrap: normal;
+  white-space: nowrap;
 }
 
 .btn::before {
@@ -283,6 +326,15 @@
     padding: 0.75rem 1.8rem;
     font-size: 0.9rem;
   }
+  
+  /* Mobile-specific hyphenation prevention */
+  .hero-subtitle {
+    hyphens: none;
+    -webkit-hyphens: none;
+    -ms-hyphens: none;
+    word-break: keep-all; /* Keeps words together on mobile */
+    overflow-wrap: break-word; /* Only breaks if absolutely necessary */
+  }
 }
 
 @media (max-width: 480px) {
@@ -302,6 +354,12 @@
   padding: 6rem 0;
   background: var(--off-white);
   position: relative;
+  /* Prevent hyphenation */
+  hyphens: none;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  word-break: normal;
+  overflow-wrap: normal;
 }
 
 .about-preview::before {
@@ -553,64 +611,79 @@
 }
 
 .route-card {
-  background: rgba(245, 198, 68, 0.1);
-  border: 1px solid rgba(245, 198, 68, 0.3);
+  background: rgba(47, 143, 60, 0.05);
+  border: 1px solid rgba(47, 143, 60, 0.15);
   border-radius: var(--radius-lg);
-  padding: 1.5rem;
+  padding: 1.75rem 1.5rem;
   display: flex;
-  align-items: center;
-  gap: 1rem;
+  align-items: flex-start;
+  gap: 1.25rem;
   transition: all var(--transition-normal);
   text-align: left;
+  min-height: 120px;
 }
 
 .route-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(245, 198, 68, 0.2);
+  box-shadow: var(--shadow-glow);
 }
 
 .route-card.primary {
-  background: var(--gradient-primary);
+  background: var(--gradient-green);
   border: none;
 }
 
-.route-card.primary .route-icon {
-  background: rgba(255, 255, 255, 0.9);
-  color: #222;
-}
-
-.route-card.primary h4,
-.route-card.primary p {
-  color: #222;
+.route-card.primary .route-info p {
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .route-icon {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   background: white;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   flex-shrink: 0;
+  transition: all var(--transition-normal);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.route-card:hover .route-icon {
+  transform: scale(1.1);
 }
 
 .route-info {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .route-info h4 {
   color: var(--leaf-green);
-  font-size: 1.1rem;
-  margin-bottom: 0.25rem;
-  font-weight: 600;
+  font-size: 1.25rem;
+  margin-bottom: 0;
+  font-weight: 700;
+  line-height: 1.3;
+  transition: color var(--transition-normal);
 }
 
 .route-info p {
   color: var(--light-text);
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   margin: 0;
+  line-height: 1.5;
+  font-style: italic;
+  letter-spacing: 0.3px;
+  transition: color var(--transition-normal);
+}
+
+.route-card.primary h4,
+.route-card.primary p {
+  color: white;
 }
 
 /* ================= WEB APP CTA ================= */
@@ -727,6 +800,11 @@
   
   .hero-subtitle {
     font-size: 1.1rem;
+    /* Ensure hyphenation is still disabled on mobile */
+    hyphens: none;
+    -webkit-hyphens: none;
+    -ms-hyphens: none;
+    word-break: keep-all;
   }
   
   .hero-buttons,
@@ -756,6 +834,29 @@
     gap: 1rem;
   }
   
+  .route-card {
+    padding: 1.5rem;
+    min-height: auto;
+  }
+  
+  .route-icon {
+    width: 55px;
+    height: 55px;
+    font-size: 1.5rem;
+  }
+  
+  .route-info h4 {
+    font-size: 1.2rem;
+  }
+  
+  .route-info p {
+    font-size: 0.9rem;
+  }
+  
+  .route-info {
+    gap: 0.4rem;
+  }
+  
   .webapp-cta h2 {
     font-size: 2rem;
   }
@@ -768,10 +869,6 @@
   .feature-item {
     padding: 0.4rem 0.8rem;
     font-size: 0.85rem;
-  }
-  
-  .route-card {
-    padding: 1.25rem;
   }
 }
 
@@ -821,6 +918,24 @@
   .platform-badge {
     width: 200px;
     text-align: center;
+  }
+  
+  .route-card {
+    padding: 1.25rem;
+  }
+  
+  .route-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.35rem;
+  }
+  
+  .route-info h4 {
+    font-size: 1.1rem;
+  }
+  
+  .route-info p {
+    font-size: 0.85rem;
   }
 }
 
@@ -875,122 +990,4 @@
 /* Force space AFTER CTA buttons */
 .cta-buttons {
   margin-bottom: 3rem !important;
-}
-/* ================= MODERNIZED ROUTES GRID ================= */
-.routes-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  margin: 2.5rem 0;
-}
-
-/* Default route card style */
-.route-card {
-  background: rgba(47, 143, 60, 0.05); /* very light greenish */
-  border: 1px solid rgba(47, 143, 60, 0.15);
-  border-radius: var(--radius-lg);
-  padding: 1.75rem 1.5rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  transition: all var(--transition-normal);
-  text-align: left;
-}
-
-.route-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-glow);
-}
-
-/* Primary highlight card (Durban & Nationwide) */
-.route-card.primary {
-  background: var(--gradient-green);
-  border: none;
-  color: white;
-}
-
-.route-card.primary .route-icon {
-  background: rgba(255, 255, 255, 0.9);
-  color: #222;
-}
-
-.route-card.primary h4,
-.route-card.primary p {
-  color: white; /* white text on green */
-}
-
-/* Route icon */
-.route-icon {
-  width: 55px;
-  height: 55px;
-  background: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  flex-shrink: 0;
-  transition: all var(--transition-normal);
-}
-
-.route-card:hover .route-icon {
-  transform: scale(1.1);
-}
-
-/* Text inside each card */
-.route-info h4 {
-  color: var(--leaf-green);
-  font-size: 1.15rem;
-  margin-bottom: 0.25rem;
-  font-weight: 700;
-  transition: color var(--transition-normal);
-}
-
-.route-info p {
-  color: var(--light-text);
-  font-size: 0.9rem;
-  margin: 0;
-  transition: color var(--transition-normal);
-}
-
-.route-card:hover .route-info h4 {
-  color: var(--olive-green);
-}
-
-.route-card:hover .route-info p {
-  color: var(--leaf-green);
-}
-
-/* Rounded and shadow effect for icon when primary */
-.route-card.primary .route-icon {
-  background: rgba(255, 255, 255, 0.9);
-  font-size: 1.6rem;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .routes-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .route-card {
-    flex-direction: row;
-    gap: 1rem;
-    padding: 1.5rem;
-  }
-
-  .route-icon {
-    width: 50px;
-    height: 50px;
-    font-size: 1.4rem;
-  }
-
-  .route-info h4 {
-    font-size: 1.1rem;
-  }
-
-  .route-info p {
-    font-size: 0.85rem;
-  }
 }

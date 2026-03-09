@@ -41,7 +41,6 @@
   margin: 0 auto;
   padding: 0 1.5rem;
 }
-
 /* ================= BUTTONS ================= */
 .btn {
   display: inline-flex;
@@ -51,11 +50,16 @@
   border-radius: var(--radius-full);
   font-weight: 600;
   font-size: 1rem;
+  line-height: 1.2;
   text-decoration: none;
   transition: all var(--transition-normal);
   cursor: pointer;
   border: 2px solid transparent;
   text-align: center;
+  min-width: 180px;
+  max-width: 280px;
+  white-space: nowrap;
+  letter-spacing: 0.3px;
 }
 
 .btn.primary {
@@ -83,8 +87,100 @@
 }
 
 .btn.large {
-  padding: 1.2rem 3rem;
-  font-size: 1.1rem;
+  padding: 1rem 2.5rem;
+  font-size: 1.05rem;
+  min-width: 200px;
+}
+
+/* Button containers */
+.hero-cta,
+.cta-buttons {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Team card link */
+.team-card a {
+  color: var(--leaf-green);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  display: inline-block;
+  margin-top: 1rem;
+  transition: all var(--transition-normal);
+}
+
+.team-card a:hover {
+  color: var(--yellow-gold);
+  transform: translateX(5px);
+}
+
+/* ================= RESPONSIVE BUTTONS ================= */
+@media (max-width: 992px) {
+  .btn {
+    min-width: 160px;
+    max-width: 260px;
+    padding: 0.85rem 1.8rem;
+    font-size: 0.98rem;
+  }
+  
+  .btn.large {
+    padding: 0.95rem 2.2rem;
+    font-size: 1.02rem;
+    min-width: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .btn {
+    min-width: unset;
+    max-width: 320px;
+    width: 100%;
+    padding: 0.85rem 1.5rem;
+    font-size: 0.98rem;
+  }
+  
+  .btn.large {
+    padding: 0.95rem 1.8rem;
+    font-size: 1rem;
+  }
+  
+  .hero-cta,
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 1.2rem;
+  }
+  
+  .hero-cta .btn,
+  .cta-buttons .btn {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn {
+    padding: 0.8rem 1.2rem;
+    font-size: 0.95rem;
+    max-width: 280px;
+  }
+  
+  .btn.large {
+    padding: 0.85rem 1.5rem;
+    font-size: 0.98rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .btn {
+    font-size: 0.9rem;
+    padding: 0.75rem 1rem;
+  }
 }
 
 /* ================= HERO SECTION ================= */
@@ -150,6 +246,11 @@
   margin-bottom: 3rem;
   opacity: 0.95;
   line-height: 1.6;
+  hyphens: none; /* Prevents automatic hyphenation */
+  -webkit-hyphens: none; /* For Safari */
+  -ms-hyphens: none; /* For older browsers */
+  word-break: normal; /* Ensures normal word breaking */
+  overflow-wrap: normal; /* Prevents breaking words */
 }
 
 .hero-cta {

@@ -89,7 +89,7 @@ const Navbar = () => {
           </li>
 
           <li>
-            <NavLink to="/services" onClick={closeMenu}>
+            <NavLink to="/transport" onClick={closeMenu}>
               Services
             </NavLink>
           </li>

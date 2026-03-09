@@ -114,15 +114,14 @@
   color: var(--yellow-gold);
 }
 
-/* Primary CTA */
 .nav-cta {
-  padding: 0.45rem 1.2rem;
-  border-radius: var(--radius-full);
-  background: linear-gradient(135deg, var(--yellow-gold), var(--orange-peach));
-  color: #201303 !important;
-  box-shadow:
-    0 0 0 1px rgba(0, 0, 0, 0.15),
-    0 10px 25px rgba(0, 0, 0, 0.45);
+  padding: 0.6rem 1.8rem;
+  animation: cta-pulse 2s infinite;
+}
+
+@keyframes cta-pulse {
+  0%, 100% { box-shadow: 0 0 0 1px rgba(0,0,0,0.15), 0 10px 25px rgba(0,0,0,0.45); }
+  50% { box-shadow: 0 0 0 1px rgba(245,198,68,0.3), 0 10px 30px rgba(245,198,68,0.3); }
 }
 
 .nav-cta::after {

@@ -883,3 +883,157 @@
     border: 1px solid #ddd;
   }
 }
+/* Add this to your Transport.css file - find where the route-info section is and replace with these styles */
+
+/* ================= FIXED TEXT COLORS ================= */
+
+/* Fix route details text */
+.route-details {
+  margin-bottom: 1.5rem;
+  flex: 1;
+}
+
+.route-info {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #e0e0e0; /* Darker border for better visibility */
+  align-items: center;
+  min-height: 40px;
+}
+
+.route-info:last-child {
+  border-bottom: none;
+}
+
+.info-label {
+  color: #4a4a4a; /* Darker grey - much more visible */
+  font-size: 0.9rem;
+  font-weight: 600; /* Made slightly bolder */
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-right: 1rem;
+}
+
+.info-value {
+  color: #2f8f3c; /* Using your leaf green variable */
+  font-weight: 700; /* Bolder */
+  font-size: 0.95rem;
+  text-align: right;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+}
+
+/* Fix route feature text */
+.route-feature {
+  color: #f29b59; /* Using your orange-peach color */
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+/* Fix section header paragraph */
+.section-header p {
+  color: #5a6a5a; /* Darker grey */
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-weight: 500; /* Slightly bolder */
+}
+
+/* Fix benefit card text */
+.benefit-card p {
+  color: #4a4a4a; /* Darker grey */
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin-bottom: 0;
+  font-weight: 500;
+}
+
+/* Fix process step text */
+.step-content p {
+  color: #4a4a4a; /* Darker grey */
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Fix FAQ text */
+.faq-item p {
+  color: #4a4a4a; /* Darker grey */
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Fix platform badges */
+.platform-badge {
+  padding: 0.6rem 1.5rem;
+  background: rgba(47, 143, 60, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius-full);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #2f8f3c; /* Dark green text */
+  border: 1px solid rgba(47, 143, 60, 0.3);
+  transition: all var(--transition-normal);
+}
+
+/* Fix contact info in CTA */
+.info-label {
+  color: rgba(255, 255, 255, 0.9); /* Brighter white */
+  font-size: 0.9rem;
+  opacity: 1;
+  margin-bottom: 0.25rem;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.info-value {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--yellow-gold);
+  white-space: nowrap;
+}
+
+/* Fix route produce text */
+.route-produce {
+  color: #f29b59; /* Orange-peach */
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+/* Fix the border colors for better visibility */
+.route-card {
+  background: white;
+  border: 2px solid rgba(47, 143, 60, 0.2); /* Darker border */
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  transition: all var(--transition-normal);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 320px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Subtle shadow */
+}
+
+.route-card:hover,
+.route-card.active {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  border-color: rgba(245, 198, 68, 0.5);
+}
+
+/* Fix the route-info border */
+.route-info {
+  border-bottom: 1px solid #d0d0d0; /* Much more visible border */
+}
