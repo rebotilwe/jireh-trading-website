@@ -11,6 +11,8 @@ import Transport from "./pages/Transport/Transport";
 import Collaborate from "./pages/Collaborate/Collaborate";
 import Contact from "./pages/Contact/Contact";
 import Platform from "./pages/Platform/Platform";
+import Terms from "./pages/Terms/Terms";
+import Privacy from "./pages/Privacy/Privacy";
 
 function App() {
   return (
@@ -26,7 +28,10 @@ function App() {
      
         <Route path="/collaborate" element={<Collaborate />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/terms" element={<Terms />} />
+         <Route path="/privacy" element={<Privacy />} />
       </Routes>
+
 
       <Footer />
     </BrowserRouter>

@@ -1,10 +1,10 @@
+// Footer.jsx - UPDATED VERSION
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "./Footer.css";
 
 // Import Logo
 import logo from "../../assets/images/logo.png"; 
-// ⚠️ Change filename if different
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -34,8 +34,6 @@ const Footer = () => {
 
               {/* BRAND SECTION */}
               <div className="footer-brand">
-
-                {/* Clickable Logo */}
                 <Link to="/" className="footer-logo-link">
                   <div className="brand-mark logo-box">
                     <img
@@ -66,12 +64,12 @@ const Footer = () => {
                 </ul>
               </div>
 
-              {/* SERVICES */}
+              {/* LEGAL */}
               <div className="footer-section">
-                <h4>Services</h4>
+                <h4>Legal</h4>
                 <ul>
-             
-                  <li><Link to="/contact">Contact</Link></li>
+                  <li><Link to="/terms">Terms & Conditions</Link></li>
+                  <li><Link to="/privacy">Privacy Policy</Link></li>
                 </ul>
               </div>
 
@@ -92,18 +90,22 @@ const Footer = () => {
         {/* BOTTOM BAR */}
         <div className="footer-bottom">
           <div className="container">
-           <div className="bottom-content">
+            <div className="bottom-content">
+              <p>
+                © {currentYear} Jireh Trading Group. All rights reserved.
+              </p>
+              
+              {/* Legal Links in Bottom Bar (optional) */}
+              <div className="bottom-legal-links">
+                <Link to="/terms">Terms</Link>
+                <span className="separator">•</span>
+                <Link to="/privacy">Privacy</Link>
+              </div>
 
-  <p>
-    © {currentYear} Jireh Trading Group. All rights reserved.
-  </p>
-
-  <p className="developer-credit">
-    Developed by <span>Afribiz Connect</span>
-  </p>
-
-</div>
-
+              <p className="developer-credit">
+                Developed by <span>Afribiz Connect</span>
+              </p>
+            </div>
           </div>
         </div>
       </footer>

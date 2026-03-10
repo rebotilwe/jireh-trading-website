@@ -352,3 +352,56 @@
   color: var(--yellow-gold);
   font-weight: 600;
 }
+/* Add to Footer.css */
+.bottom-legal-links {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.bottom-legal-links a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.bottom-legal-links a:hover {
+  color: var(--yellow-gold);
+}
+
+.bottom-legal-links .separator {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* Update bottom-content for better spacing */
+.bottom-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .bottom-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .bottom-legal-links {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .developer-credit {
+    margin-top: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .bottom-legal-links {
+    font-size: 0.8rem;
+  }
+}
