@@ -102,9 +102,17 @@ const Footer = () => {
                 <Link to="/privacy">Privacy</Link>
               </div>
 
-              <p className="developer-credit">
-                Developed by <span>Afribiz Connect</span>
-              </p>
+             <p className="developer-credit">
+  Developed by{" "}
+  <a 
+    href="https://afribizconnect.co.za/" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="developer-link"
+  >
+    Afribiz Connect
+  </a>
+</p>
             </div>
           </div>
         </div>
