@@ -405,3 +405,70 @@
     font-size: 0.8rem;
   }
 }
+/* --- FOOTER GRID ALIGNMENT --- */
+.footer-grid {
+  display: grid;
+  /* Balanced columns: Brand gets space, links are compact, contact is readable */
+  grid-template-columns: 1.5fr 0.8fr 0.8fr 1.2fr; 
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+/* --- CONTACT INFO ALIGNMENT FIX --- */
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* This container ensures the icon and text stay on the same line */
+.footer-section li {
+  display: flex;
+  align-items: center; /* Vertical center */
+  gap: 12px;           /* Space between icon and text */
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
+  white-space: nowrap; /* Prevents text from jumping below the icon */
+}
+
+/* Specific fix for the email link */
+.footer-section li a {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  transition: color 0.3s ease;
+}
+
+.footer-section li a:hover {
+  color: var(--yellow-gold);
+  transform: none; /* Removed the translateX to keep it aligned with icons */
+}
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+
+/* Medium Screens (Tablets/Small Laptops) */
+@media (max-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr; /* 2x2 grid for better spacing */
+    gap: 3rem;
+  }
+}
+
+/* Mobile Screens */
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr; /* Stack everything */
+    text-align: center;
+  }
+  
+  .footer-section li {
+    justify-content: center; /* Center icons + text on mobile */
+  }
+
+  .footer-brand {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}

@@ -74,14 +74,26 @@ const Footer = () => {
               </div>
 
               {/* CONTACT */}
-              <div className="footer-section">
-                <h4>Contact Info</h4>
-                <ul>
-                  <li>📍 Durban, KZN</li>
-                  <li>📞 +27 78 738 2435</li>
-                  <li>✉️ info@jirehtradinggroup.co.za</li>
-                </ul>
-              </div>
+             {/* CONTACT */}
+<div className="footer-section">
+  <h4>Contact Info</h4>
+  <ul className="contact-list">
+    <li className="contact-item">
+      <span className="contact-icon">📍</span>
+      <span>Durban, KZN</span>
+    </li>
+    <li className="contact-item">
+      <span className="contact-icon">📞</span>
+      <span>+27 78 738 2435</span>
+    </li>
+    <li className="contact-item">
+      <span className="contact-icon">✉️</span>
+      <a href="mailto:info@jirehtradinggroup.co.za" className="contact-email">
+        info@jirehtradinggroup.co.za
+      </a>
+    </li>
+  </ul>
+</div>
 
             </div>
           </div>

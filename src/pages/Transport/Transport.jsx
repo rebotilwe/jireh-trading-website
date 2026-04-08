@@ -54,7 +54,6 @@ const Transport = () => {
 
   return (
     <main className="transport-page">
-
       {/* Hero Section */}
       <section className="transport-hero">
         <div className="hero-overlay">
@@ -101,7 +100,7 @@ const Transport = () => {
                 onClick={() => setActiveRoute(route.id)}
               >
                 <div className="route-header">
-                  <div className="route-icon">
+                  <div className="route-icon" aria-hidden="true">
                     {route.id === 1 && '🥭'}
                     {route.id === 2 && '🍊'}
                     {route.id === 3 && '🥬'}
@@ -116,28 +115,21 @@ const Transport = () => {
                 
                 <div className="route-details">
                   <div className="route-info">
-                    <span className="info-label">Season:</span> 
-                    <span className="info-value">{route.season}</span>
+                    <span className="info-label">{route.season}</span> 
                   </div>
                   <div className="route-info">
-                    <span className="info-label">Distance:</span> 
                     <span className="info-value">{route.distance}</span>
                   </div>
                   <div className="route-info">
-                    <span className="info-label">Transit Time:</span> 
                     <span className="info-value">{route.transitTime}</span>
                   </div>
                   <div className="route-info">
-                    <span className="info-label">Frequency:</span> 
                     <span className="info-value">{route.frequency}</span>
                   </div>
                 </div>
                 
                 <div className="route-actions centered-buttons">
-                  <Link 
-                    to="/contact" 
-                    className="btn primary small"
-                  >
+                  <Link to="/contact" className="btn primary small">
                     Inquire About This Route
                   </Link>
                 </div>
@@ -154,20 +146,17 @@ const Transport = () => {
             <h2>Why Choose Our Logistics Coordination</h2>
             <p>Efficient agricultural transport solutions through shared systems</p>
           </div>
-          
           <div className="benefits-grid">
             <div className="benefit-card">
               <div className="benefit-icon">💰</div>
               <h3>Cost Savings</h3>
               <p>Shared load transport reduces costs by up to 40% compared to dedicated vehicles</p>
             </div>
-            
             <div className="benefit-card">
               <div className="benefit-icon">⏱️</div>
               <h3>Reliable Scheduling</h3>
               <p>Consistent transport coordination with multiple pickups and optimized routing</p>
             </div>
-            
             <div className="benefit-card">
               <div className="benefit-icon">🤝</div>
               <h3>Partner Network</h3>
@@ -186,42 +175,14 @@ const Transport = () => {
               Get reliable transport solutions for your produce with our shared load 
               systems and optimized routing across South Africa.
             </p>
-            
             <div className="booking-buttons">
               <Link to="/contact" className="btn primary large">
                 Contact Logistics Team
               </Link>
             </div>
-            
-            <div className="contact-info">
-              <div className="info-item">
-                <div className="info-icon">📞</div>
-                <div>
-                  <div className="info-label">Phone Support</div>
-                  <div className="info-value">Mon-Fri, 7am-7pm</div>
-                </div>
-              </div>
-              
-              <div className="info-item">
-                <div className="info-icon">✉️</div>
-                <div>
-                  <div className="info-label">Email Support</div>
-                  <div className="info-value">24/7 Response</div>
-                </div>
-              </div>
-              
-              <div className="info-item">
-                <div className="info-icon">🚛</div>
-                <div>
-                  <div className="info-label">Urgent Transport</div>
-                  <div className="info-value">Same-day Coordination</div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
-
     </main>
   );
 };
